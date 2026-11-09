@@ -16,9 +16,9 @@
 
 ## 怎么用
 
-- 进 week8/课堂作业 目录跑：python assistant_v1.py，会依次回答三个问题。
-- 想看开关效果：python compare_rag.py，同一个问题开/关 RAG 各答一次。
-- 每次的问答结果记在 week8/课堂作业/answer_log.md 里。
+- 在本目录（week8/课堂作业）运行：python assistant_v1.py，会依次回答三个问题。
+- 想看开关效果：到 week8/课后作业 目录下运行 python compare_rag.py，同一个问题开/关 RAG 各答一次。
+- 每次的问答结果记在本目录的 answer_log.md 里，映射表在 week8/课后作业/rag_mapping.md。
 
 ## 已知问题
 

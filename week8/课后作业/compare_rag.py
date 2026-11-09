@@ -3,7 +3,9 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+_HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.dirname(os.path.dirname(_HERE)))          # 仓库根目录（weekpath.py 在这）
+sys.path.insert(0, os.path.join(os.path.dirname(_HERE), "课堂作业"))  # assistant_v1.py 在这
 import weekpath  # noqa: E402
 
 weekpath.load_env()
