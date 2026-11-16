@@ -8,3 +8,4 @@ venv/
 chat_log.txt
 chroma_db/
 .DS_Store
+chroma_db*/
