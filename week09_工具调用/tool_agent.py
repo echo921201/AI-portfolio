@@ -23,10 +23,6 @@ VOCAB = weekpath.data_path("生词表.csv")
 # DEEPSEEK_MODEL=llama3.1:8b-local。不设置时行为与云端口径完全一致。
 MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")
 
-# 轨迹记录开关：设 W9_TRACE=1 时，把每轮「模型原始输出 / 解析到的调用 / 工具返回」打出来，
-# 用来写 week09_工具调用/轨迹记录.md。不设置时行为与骨架完全一致。
-TRACE = os.getenv("W9_TRACE") == "1"
-
 _client = None
 
 
@@ -130,9 +126,6 @@ def run(user_msg, max_calls=2):
             model=MODEL, messages=msgs).choices[0].message.content
         calls = [c for c in parse_calls(txt)
                  if isinstance(c.get("tool"), str) and c.get("tool") in TOOLS]
-        if TRACE:
-            print("[第%d轮] 模型原始输出：%s" % (_ + 1, txt.strip()))
-            print("[第%d轮] 解析到的调用：%r" % (_ + 1, calls))
         if not calls:
             return txt                                   # 没调用工具 → 直接回答
         # 一轮内依次执行模型请求的全部工具，结果合并回喂
@@ -148,14 +141,12 @@ def run(user_msg, max_calls=2):
                 results.append("工具执行失败：%s" % e)
         msgs += [{"role": "assistant", "content": txt},
                  {"role": "user", "content": "工具返回：%s。请据此作答。" % "；".join(results)}]
-        if TRACE:
-            print("[第%d轮] 工具返回：%s" % (_ + 1, "；".join(results)))
     # 达到上限后强制收口，避免无限循环烧 token
     return get_client().chat.completions.create(
         model=MODEL, messages=msgs).choices[0].message.content
 
 
 if __name__ == "__main__":
-    q = " ".join(sys.argv[1:]) or "我在给 HSK4 的学生备《愚公移山》这节课，先帮我确认两件事：1. '无穷无尽'是几级词？2. 现在几点了？"
+    q = " ".join(sys.argv[1:]) or "请依次查询两件事：1. '把'字的 HSK 等级是多少？2. 现在的时间是多少？"
     print("用户输入：", q)
     print("助手：", run(q))
