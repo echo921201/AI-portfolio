@@ -14,7 +14,7 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.dirname(HERE))
+sys.path.insert(0, os.path.dirname(os.path.dirname(HERE)))   # 仓库根目录（weekpath.py 在这）
 sys.path.insert(0, HERE)
 
 import tool_agent as ta  # noqa: E402

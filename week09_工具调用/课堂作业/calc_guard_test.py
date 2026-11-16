@@ -1,9 +1,9 @@
 # W9 安全边界自测：验证 calc() 的白名单 AST 会拒绝越权表达式
-# 运行：python calc_guard_test.py（在 week09_工具调用 目录下）
+# 运行：python calc_guard_test.py（在 week09_工具调用/课堂作业 目录下）
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 import weekpath  # noqa: E402
 
 weekpath.load_env()

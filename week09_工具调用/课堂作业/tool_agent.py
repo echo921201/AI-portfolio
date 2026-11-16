@@ -9,7 +9,7 @@ import re
 import operator
 import datetime
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 import weekpath  # noqa: E402  数据路径 + 加载 .env
 
 weekpath.load_env()
