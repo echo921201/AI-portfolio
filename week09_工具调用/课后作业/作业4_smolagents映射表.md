@@ -5,7 +5,8 @@
 - 安装：`pip install smolagents`，实际装到 **1.26.0**（Python 3.11）
 - 许可证：Apache-2.0（包内 LICENSE 已核对）
 - 最小示例：`week09_工具调用/课后作业/smolagents_min.py`，**已跑通**，挂的是**两个工具**——单参数的 `hsk_level(word)` 和双参数的 `text_level(text, target)`，正好验证「框架怎么处理多参数工具」
-- 运行日志（等价于运行截图）：`week09_工具调用/课后作业/smolagents_run.log`
+- 运行日志（终端原始输出）：`week09_工具调用/课后作业/smolagents_run.log`
+- 运行截图（本人机器上的真实运行画面）：`smolagents_运行截图_01.png`（两个问题 + 两次工具调用）、`smolagents_运行截图_02.png`（第二个问题的完整回答）
 - 路径选择：**A 路径**（本机 31 GB 内存 + RTX 5070，云端 DeepSeek 可用）
 
 ## 二、5 行映射表
