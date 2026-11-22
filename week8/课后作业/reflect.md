@@ -34,5 +34,6 @@
 | 文件 | 说明 |
 |---|---|
 | `official_rag_min.py` | 官方风格最小示例（LCEL 链），支持传语料文件名做改造对比 |
+| `截图_官方2step运行.png` | 本机运行 `official_rag_min.py` 的终端画面（语料=等级标准节选） |
 | `rag_mapping.md` | 5 行映射表（手写 rag_qa.py ↔ 官方流水线） |
 | `reflect.md` | 本文件 |
