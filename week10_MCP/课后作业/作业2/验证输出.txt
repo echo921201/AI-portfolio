@@ -1,0 +1,4 @@
+发现的工具： ['hsk_level', 'list_by_level', 'count_by_level']
+调用 hsk_level('把') → 把 -> 3 级
+调用 list_by_level('5') → 愚公移山、子子孙孙、无穷无尽
+调用 count_by_level('3') → 3 级共 2 个词
